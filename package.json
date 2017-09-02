@@ -1,6 +1,6 @@
 {
   "name": "node-wad",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "A Doom WAD parser and writer.",
   "main": "src/wad.js",
   "scripts": {
