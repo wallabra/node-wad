@@ -1,3 +1,5 @@
+add = (a, b) -> a + b
+
 class WDirectory
     constructor: (@wad) ->
     
@@ -13,13 +15,14 @@ class WDirectory
 
             bf
                 .writeUInt32LE(@wad.lumps
-                    .slice(0, i + 1)
+                    .slice(0, i)
                     .map((x) -> x.getSize())
-                    .reduce((a, b) -> a + b))
+                    .reduce(add, 0) + 12)
+
                 .writeUInt32LE(entry.getSize())
             
             for c in namecode
-                bf.writeUInt8(  )
+                bf.writeUInt8((new Buffer(c, 'ascii')).readUInt8())
 
             i++
 

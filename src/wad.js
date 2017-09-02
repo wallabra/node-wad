@@ -15,9 +15,8 @@ BufferReader = require("buffer-utils").BufferReader;
 BufferWriter = require("buffer-utils").BufferWriter;
 
 WAD = (function() {
-  function WAD(bPWAD, numLumps1) {
+  function WAD(bPWAD) {
     this.bPWAD = bPWAD;
-    this.numLumps = numLumps1;
     this.addLump = bind(this.addLump, this);
     this.write = bind(this.write, this);
     this.lumps = [];
@@ -70,6 +69,12 @@ WAD = (function() {
   };
 
   WAD.prototype.addLump = function(name, data) {
+    if (data == null) {
+      data = "";
+    }
+    if (name == null) {
+      name = "_";
+    }
     return this.lumps.push(new WLump(this, data, name));
   };
 

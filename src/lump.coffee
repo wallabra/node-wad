@@ -13,7 +13,10 @@ class WLump
         return @data.length
 
     write: (bf) =>
-        for c in @data.toString('ascii')
-            bf.writeUInt8((new Buffer(c, 'ascii')).readUInt8())
+        if @data.length == 0
+            return
+
+        for i in [0..@data.length - 1]
+            bf.writeUInt8(@data.slice(i, i + 1).readUInt8())
 
 module.exports = WLump

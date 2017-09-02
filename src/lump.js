@@ -20,12 +20,13 @@ WLump = (function() {
   };
 
   WLump.prototype.write = function(bf) {
-    var c, i, len, ref, results;
-    ref = this.data.toString('ascii');
+    var i, j, ref, results;
+    if (this.data.length === 0) {
+      return;
+    }
     results = [];
-    for (i = 0, len = ref.length; i < len; i++) {
-      c = ref[i];
-      results.push(bf.writeUInt8((new Buffer(c, 'ascii')).readUInt8()));
+    for (i = j = 0, ref = this.data.length - 1; 0 <= ref ? j <= ref : j >= ref; i = 0 <= ref ? ++j : --j) {
+      results.push(bf.writeUInt8(this.data.slice(i, i + 1).readUInt8()));
     }
     return results;
   };

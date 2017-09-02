@@ -6,7 +6,7 @@ BufferReader = require("buffer-utils").BufferReader
 BufferWriter = require("buffer-utils").BufferWriter
 
 class WAD
-    constructor: (@bPWAD, @numLumps) ->
+    constructor: (@bPWAD) ->
         @lumps = []
         @_header = new WHeader(@)
         @_directory = new WDirectory(@)
@@ -78,6 +78,9 @@ class WAD
         return bw.getContents()
 
     addLump: (name, data) =>
+        if not data? then data = ""
+        if not name? then name = "_"
+
         @lumps.push(new WLump(
             @
             data

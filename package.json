@@ -1,6 +1,6 @@
 {
   "name": "node-wad",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "A Doom WAD parser and writer.",
   "main": "src/wad.js",
   "scripts": {
@@ -29,6 +29,7 @@
   },
   "homepage": "https://github.com/Gustavo6046/node-wad#readme",
   "dependencies": {
+    "bitfield": "^1.1.2",
     "buffer-utils": "^1.0.1"
   }
 }
