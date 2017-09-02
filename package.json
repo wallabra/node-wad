@@ -1,8 +1,8 @@
 {
   "name": "node-wad",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A Doom WAD parser and writer.",
-  "main": "src/wad.js",
+  "main": "src/export.js",
   "scripts": {
     "test": "node tests/wadtest.coffee",
     "preversion": "git add .",
