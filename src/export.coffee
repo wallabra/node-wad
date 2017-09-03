@@ -1,4 +1,4 @@
 module.exports = {
-    WAD: require("wad.js")
-    MapEdit: require("map.js")
+    WAD: require("./wad.js")
+    MapEdit: require("./map.js")
 }
