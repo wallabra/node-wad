@@ -238,7 +238,7 @@ WVertex = (function() {
   }
 
   WVertex.prototype.write = function(bw) {
-    bw.writeUInt16LE(this.x).writeUInt16LE(this.y);
+    bw.writeInt16LE(this.x).writeInt16LE(this.y);
     return this;
   };
 

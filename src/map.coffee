@@ -138,8 +138,8 @@ class WVertex
 
     write: (bw) =>
         bw
-            .writeUInt16LE(@x)
-            .writeUInt16LE(@y)
+            .writeInt16LE(@x)
+            .writeInt16LE(@y)
 
         return @
 

@@ -1,12 +1,14 @@
 {
   "name": "node-wad",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "A Doom WAD parser and writer.",
   "main": "src/export.js",
   "scripts": {
     "test": "node tests/wadtest.coffee",
-    "preversion": "git add .",
-    "postversion": "git push"
+    "postversion": "git push",
+    "npatch": "coffee -cb . & git add . & npm version --force patch & npm publish",
+    "nminor": "coffee -cb . & git add . & npm version --force minor & npm publish",
+    "nmajor": "coffee -cb . & git add . & npm version --force major & npm publish"
   },
   "repository": {
     "type": "git",
