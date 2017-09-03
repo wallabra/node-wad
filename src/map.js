@@ -330,7 +330,7 @@ MapEdit = (function() {
       newv.push(v);
     }
     vi = 0;
-    sector = new WSector(sectorData.floorHeight, sectorData.ceilHeight, sectorData.floorTex, sectorData.ceilTex, sectorData.light, sectorData.special, sectorData.tag, this.sectors.index + 1);
+    sector = new WSector(sectorData.floorHeight, sectorData.ceilHeight, sectorData.floorTex, sectorData.ceilTex, sectorData.light, sectorData.special, sectorData.tag, this.sectors.index);
     this.sectors.push(sector);
     for (j = 0, len1 = newv.length; j < len1; j++) {
       v1 = newv[j];
@@ -349,7 +349,7 @@ MapEdit = (function() {
             break;
           }
         }
-        if (line.backSidedef != null) {
+        if (line.backSidedef < 0xFFFF) {
           line.frontSidedef = side;
         } else {
           line.backSidedef = side;

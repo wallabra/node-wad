@@ -218,7 +218,7 @@ class MapEdit
             sectorData.light,
             sectorData.special,
             sectorData.tag,
-            @sectors.index + 1
+            @sectors.index
         )
 
         @sectors.push(sector)
@@ -239,7 +239,7 @@ class MapEdit
                         line = l
                         break
 
-                if line.backSidedef?
+                if line.backSidedef < 0xFFFF # testing stuff
                     line.frontSidedef = side
 
                 else
